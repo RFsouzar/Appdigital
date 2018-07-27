@@ -1,10 +1,10 @@
 
 <template>
-<div clas="corpo">
+<div class="corpo">
 
 <div class="page-container">
     <md-app md-mode="reveal">
-      <md-app-toolbar class="md-primary">
+      <md-app-toolbar class="md-primary" id="teste">
         <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
           <md-icon>menu</md-icon>
         </md-button>
@@ -74,6 +74,10 @@ export default {
 </script>
 
 <style>
+
+#teste{
+  background-color:#c41313;
+}
 
 </style>
 
