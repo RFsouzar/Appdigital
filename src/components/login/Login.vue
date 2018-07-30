@@ -2,11 +2,8 @@
 <div>
 
 <meu-painel :titulo="titulo">
-    <!--<img src="../static/B24horasdigital.png">-->
-     
-    </meu-painel>
-
-            <div class="container-fluid">
+    
+    <div class="container-fluid">
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Conta</label>
@@ -21,9 +18,10 @@
                 
         </form>
         </div>
+     
+    </meu-painel>
 
-
-
+            
 
   </div>
     

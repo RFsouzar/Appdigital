@@ -11,8 +11,8 @@
         <span class="md-title">{{titulo}}</span>
       </md-app-toolbar>
 
-      <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+      <md-app-drawer :md-active.sync="menuVisible" id="Listatoolbar">
+        <md-toolbar class="md-transparent" md-elevation="0" >Navigation</md-toolbar>
 
         <md-list>
           <md-list-item>
@@ -37,13 +37,11 @@
         </md-list>
       </md-app-drawer>
 
-      <md-app-content class="teste">
+      <md-app-content id="Conteudoscreen">
 
-        <slot></slot>
-
-          <!--<div id="imagem-responsiva">
-    <img src="../static/B24horasdigital.png">
-     </div>-->
+        <slot class="conteudo-painel">
+              <!-- Todo conteudo das páginas aqui-->
+        </slot>
 
       </md-app-content>
     </md-app>
@@ -77,6 +75,15 @@ export default {
 
 #teste{
   background-color:#c41313;
+}
+
+#Listatoolbar{
+  height: 650px;
+  
+}
+
+#Conteudoscreen{
+  height: 580px;
 }
 
 </style>
