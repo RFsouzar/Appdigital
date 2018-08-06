@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import VueRouter from 'vue-router';
 import {routes} from './routes' 
 import VueTheMask from 'vue-the-mask'
+import VueResource from 'vue-resource';
 
 
 import VueMaterial from 'vue-material'
@@ -20,6 +21,7 @@ Vue.use(BootstrapVue);
 Vue.use(VueMaterial);
 Vue.use(VueRouter);
 Vue.use(VueTheMask);
+Vue.use(VueResource);
 
 const router = new VueRouter({
   routes,

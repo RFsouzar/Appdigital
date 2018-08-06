@@ -4,38 +4,30 @@
 <meu-painel :titulo="titulo">
     <md-card>
    <md-card-header>
-        <div class="md-title">Bem Vindo!</div>
+        <div class="md-title" style="font-size:18px;">Bem Vindo!</div>
       </md-card-header>
 
       <md-card-content>
         <div class="container" id="divhome">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
+          <div class="container" id="divsubhome">
+              <h5 style="text-align:center;"> Saldo Disponivel: </h5>
+                <div class="container" style="text-align:center;">
+                <!--<textarea name="origemvalor" id="origemvalor"  rows="1" readonly></textarea>-->
+                <h5>R$ {{origemvalor}}</h5>
+                
+              </div>
+          </div>
         </div>
       </md-card-content>
 
       <md-card-actions>
-        <md-button>Sair</md-button>
-        <router-link to="/Pagamento"><md-button>Pagamentos</md-button></router-link>
+        <div class="container">
+        
+          </div>
       </md-card-actions>
 
       </md-card>
   
-
-  <div class="container" id="divbtnpaga">
-          <router-link to="/Pagamento">
-          <button id="btnpaga" type="button" class="btn btn-secondary">Pagamento</button>
-          </router-link>
-      </div>
-
-
-    <div class="phone-viewport">
-      <md-bottom-bar class="md-accent" md-sync-route>
-        <md-bottom-bar-item to="/components/bottom-bar/home" md-label="Home" md-icon="home"></md-bottom-bar-item>
-        <md-bottom-bar-item to="/components/bottom-bar/favorites" md-label="Favorites" md-icon="favorite"></md-bottom-bar-item>
-      </md-bottom-bar>
-    </div>
-
-
     </meu-painel>
 
 
@@ -48,17 +40,36 @@
 import Painel from '../shared/painel/Painel.vue'
 
 export default {
+  name:'Home',
   components:{
     'meu-painel': Painel,
-
 
   },
 
   data () {
     return {
       titulo: 'App da IF',
-      menuVisible: false
+      menuVisible: false,
+      origemvalor:''
     }
+  },
+
+  /*created(){
+
+   this.$http.get('https://my-json-server.typicode.com/typicode/demo/profile')
+      .then(res => res.json())
+      .then(origemvalor => this.name = name, err => console.log(err));
+      
+        console.log(res);  
+
+  }*/
+
+  created() {
+
+    let promise = this.$http.get('https://my-json-server.typicode.com/typicode/demo/profile');
+    promise.then(res => res.json())
+    .then( fotos => this.origemvalor = fotos.name)
+
   }
 
     
@@ -87,15 +98,46 @@ export default {
   }
 
   #divhome{
-    background:gray;
+    background:rgb(199, 198, 198);
     color:white;
-    width: 210px;
-    height: 150px;
+    width: 251px;
+    height: 110px;
     align-items: center;
-  -webkit-justify-content: center;
+    -webkit-justify-content: center;
     font-size: 12px;
     margin-bottom: 10px;
   }
+
+  #divsubhome{
+    background: rgb(63, 63, 63);
+    margin-top:11px; 
+    width: 100%;
+    padding-top: 22px;  
+  }
+#btnsair{
+  background:#c41313;
+  height: 30px;
+  font-style: italic;
+  font-size: 12px;
+}
+#btnpgtm{
+  background:#c41313;
+  height: 30px;
+  font-style: italic;
+  font-size: 12px;
+}
+
+#origemvalor{
+  border: none;
+  width: 155px;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  background:rgb(63, 63, 63);
+  text-align: center;
+  font-size: 15px;
+}
+
 
 
 </style>

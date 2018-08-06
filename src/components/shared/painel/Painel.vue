@@ -16,13 +16,15 @@
 
         <md-list>
           <md-list-item>
-            <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">Inbox</span>
+            <md-icon>credit_card</md-icon>
+            <router-link to="/Pagamento">
+            <span class="md-list-item-text" id="saque">Saque Digital</span>
+            </router-link> 
           </md-list-item>
 
           <md-list-item>
-            <md-icon>send</md-icon>
-            <span class="md-list-item-text">Sent Mail</span>
+            <md-icon>account_balance_wallet</md-icon>
+            <router-link to="/Home"><span class="md-list-item-text" id="saldohome">Saldo</span> </router-link>
           </md-list-item>
 
           <md-list-item>
@@ -31,8 +33,8 @@
           </md-list-item>
 
           <md-list-item>
-            <md-icon>error</md-icon>
-            <span class="md-list-item-text">Spam</span>
+            <md-icon>power_settings_new</md-icon>
+            <router-link to="/"><span class="md-list-item-text" id="logout">Sair</span> </router-link>
           </md-list-item>
         </md-list>
       </md-app-drawer>
@@ -84,6 +86,20 @@ export default {
 
 #Conteudoscreen{
   height: 580px;
+}
+
+#saque{
+  color:#262626;
+  padding-right: 300px;
+}
+
+#logout{
+  color:#262626;
+  padding-right: 300px;
+}
+#saldohome{
+  color:#262626;
+  padding-right: 300px;
 }
 
 </style>
