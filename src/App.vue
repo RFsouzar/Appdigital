@@ -1,7 +1,7 @@
 <template>
      <div class="corpo">
 
-       <router-view></router-view>
+       <router-view> </router-view>
          
      </div>
         

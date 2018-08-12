@@ -30,9 +30,16 @@ const router = new VueRouter({
 
 Vue.config.productionTip = false
 
+Vue.component('modal', {
+  template: '#modal-template'
+})
+
 new Vue({
   el: '#app',
   router,
   render: h => h(App),
+  data: {
+    showModal: false
+  }
   
 })

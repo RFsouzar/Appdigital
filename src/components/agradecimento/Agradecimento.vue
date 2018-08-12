@@ -2,25 +2,9 @@
 
 <meu-painel :titulo="titulo">
 
-
   <div>
   
-    <md-card class="md-accent" md-with-hover id="teste123">
-      <md-ripple>
-        <md-card-header>
-          <div class="md-title">Transação Concluída!</div>
-          <!--<div class="md-subhead">With hover and ripple effects</div>-->
-        </md-card-header>
-
-        <md-card-content>
-          Obrigado por utilizar nossos serviços.
-        </md-card-content>
-
-        <md-card-actions>
-          <md-button id="actionbutton">Sair</md-button>
-        </md-card-actions>
-      </md-ripple>
-    </md-card>
+    
 
   </div>
 
