@@ -11,6 +11,7 @@ import VueRouter from 'vue-router';
 import {routes} from './routes' 
 import VueTheMask from 'vue-the-mask'
 import VueResource from 'vue-resource';
+import money from 'v-money'
 
 
 import VueMaterial from 'vue-material'
@@ -22,6 +23,7 @@ Vue.use(VueMaterial);
 Vue.use(VueRouter);
 Vue.use(VueTheMask);
 Vue.use(VueResource);
+Vue.use(money, {precision: 4});
 
 const router = new VueRouter({
   routes,

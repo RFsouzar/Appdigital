@@ -28,12 +28,10 @@
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
-              <input type="number" class="form-control" id="saldopg1" placeholder="00,00"
-               v-on:input="pagamento.pegaValor= $event.target.value" :value="pagamento.pegaValor" /> 
-               
-
+              <!--<input type="number" class="form-control" id="saldopg1" placeholder="00,00"
+               v-on:input="pagamento.pegaValor= $event.target.value" :value="pagamento.pegaValor" />-->
+              <input class="form-control"  id="saldopg1" v-on:input="pagamento.pegaValor= $event.target.value" v-model.lazy="price" v-money="money"/> 
                <!--v-mask="['##,##', '###,###,##', '###,##', '#.###,##']"-->
-
                 <div class="input-group-addon">.00</div>
           </div>
       </div>
@@ -81,10 +79,10 @@
 </template>
 
 <script>
-var result;
 
 import Painel from '../shared/painel/Painel.vue'
 import {TheMask} from 'vue-the-mask'
+import {VMoney} from 'v-money'
 
 export default {
     components:{TheMask},
@@ -101,15 +99,23 @@ export default {
       mensagem: '',
       token:"",
       saldoatual:"",
-      
 
+      price: 0.00,
+        money: {
+          decimal: ',',
+          thousands: '.',
+          precision: 2,
+          masked: false
+        },
+        directives: {money: VMoney},
+      
   pagamento:{
 
       pegaNome: '',
       pegaCPF:'',
       pegaTelefone:'',
       pegaValor:'',
-
+      
       }
 
     }
@@ -130,9 +136,15 @@ export default {
     },
 
     addvalor(val){
+      var result;
       result = document.getElementById('saldopg1');
-      result.value = result.value? parseInt(result.value) + parseInt(val) : parseInt(val);
+      console.log(result);
+      result.value = result.value? parseFloat(result.value) + parseFloat(val) : parseFloat(val);
+      console.log(result.value);
+
+
     },
+    
 
     pagar() {
 
